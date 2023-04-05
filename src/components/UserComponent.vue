@@ -64,6 +64,10 @@ export default {
             .catch(error => {
                 console.log(error.response);
                 let err = error.response;
+                if(err.status == 401){
+                    alert("User name or password is invalid");
+                    store.dispatch('setAuth', false);
+                }
             });
         };
 

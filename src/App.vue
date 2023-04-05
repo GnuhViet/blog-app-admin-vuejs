@@ -5,10 +5,10 @@
         <div class="container">
           <router-link to="/" class="navbar-brand float-left">MEVN Stack CRUD</router-link>
           <ul class="nav navbar-nav flex-row float-right">
-            <li class="nav-item" v-if="isCheck">
+            <li class="nav-item" v-if="!auth">
               <router-link to="/" class="nav-link px-3">Login</router-link>
             </li>
-            <li class="nav-item" v-if="!isCheck">
+            <li class="nav-item" v-if="auth">
               <router-link to="/" class="nav-link" @click="logout">Logout</router-link>
             </li>
           </ul>
@@ -26,26 +26,19 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+import { useStore } from 'vuex';
 /* eslint-disable */
 export default {
-  data(){
-    return{
-      isCheck: false,
-    }
-  },
-  mounted(){
-    if(sessionStorage.getItem("JWT") == null){
-      this.isCheck = false;
-    }
-    else{
-      this.isCheck = true;
-    }
-  },
   setup() {
+    const store = useStore();
+    const auth = computed(() => store.state.authenticated);
     const logout = async () => {
         sessionStorage.removeItem("JWT");
+        store.dispatch('setAuth', false);
     }
     return{
+        auth,
         logout
     }
   }
