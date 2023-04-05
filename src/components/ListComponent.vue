@@ -49,7 +49,7 @@ export default {
     },
     created() {
         const headers = {
-            'Authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJqdGkiOiI5MjQ3NGY1OC04NTgzLTRiYzItYTc5OC1iNzU4OWY0YTg0MGMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTY4MDUyOTAyOSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzE4NSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcxODUifQ.ek5SqOKXk1S84gdL0M1d9MFWW5sBOST-HLfDOq287GZUHTssgVU31r9jZ9HgwJWW5sFxL2PkWsB6ENTpV0jfGA',
+            'Authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJqdGkiOiI3YTZkYTIyMy1jNzJhLTRkZTUtYWVlNy00NGJkZTI4ODhiMTEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTY4MDY4NjU5NCwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzE4NSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjcxODUifQ.uEoq902Trf0rn16GGpG9pgZ0ZiprJXhtn-LYfaY0PxaDPkSK1AiyGoNPFEsqeDVsiyzI_5fdEcu0AHN0Wf2T4g',
         }
 
         let apiURL = 'https://localhost:44303/api/Admin/ListUser';
