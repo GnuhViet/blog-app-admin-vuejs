@@ -22,7 +22,7 @@
                                 <td>{{ student.email }}</td>
                                 <td>{{ student.fullName }}</td>
                                 <td>
-                                    <router-link :to="{name: 'edit', params: {id: student.blogUserId}}"
+                                    <router-link :to="{name: 'ListArticle', params: {id: student.blogUserId}}"
                                     class="btn btn-success me-2">
                                         Danh sách
                                     </router-link>
