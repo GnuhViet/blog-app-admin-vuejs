@@ -3,6 +3,7 @@ import EditComponent from "@/components/EditComponent.vue";
 import ListUserComponent from "@/components/ListUserComponent.vue";
 import UserComponent from "@/components/UserComponent.vue";
 import ListArticle from "@/components/ListArticle.vue";
+
 import ListCommentComponent from "@/components/ListCommentComponent.vue"
 
 const routes = [
@@ -31,6 +32,7 @@ const routes = [
     name: "ListComment",
     component: ListCommentComponent,
   },
+
 
 ];
 
