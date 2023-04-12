@@ -28,7 +28,7 @@
                                     </router-link>
                                 </td>
                                 <td>
-                                    <router-link :to="{name: 'edit', params: {id: student.blogUserId}}"
+                                    <router-link :to="{name: 'ListComment', params: {id: student.blogUserId}}"
                                     class="btn btn-success me-2">
                                         Danh sách
                                     </router-link>

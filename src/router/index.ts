@@ -4,6 +4,8 @@ import ListUserComponent from "@/components/ListUserComponent.vue";
 import UserComponent from "@/components/UserComponent.vue";
 import ListArticle from "@/components/ListArticle.vue";
 
+import ListCommentComponent from "@/components/ListCommentComponent.vue"
+
 const routes = [
   {
     path: "/",
@@ -25,6 +27,12 @@ const routes = [
     name: "ListArticle",
     component: ListArticle,
   },
+  {
+    path: "/ListComment",
+    name: "ListComment",
+    component: ListCommentComponent,
+  },
+
 
 ];
 
