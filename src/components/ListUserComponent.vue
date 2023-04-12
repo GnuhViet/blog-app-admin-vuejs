@@ -22,13 +22,13 @@
                                 <td>{{ student.email }}</td>
                                 <td>{{ student.fullName }}</td>
                                 <td>
-                                    <router-link :to="{name: 'edit', params: {id: student.blogUserId}}"
+                                    <router-link :to="{name: 'ListArticle', params: {id: student.blogUserId }}"
                                     class="btn btn-success me-2">
                                         Danh sách
                                     </router-link>
                                 </td>
                                 <td>
-                                    <router-link :to="{name: 'edit', params: {id: student.blogUserId}}"
+                                    <router-link :to="{name: 'ListComment', params: {id: student.blogUserId}}"
                                     class="btn btn-success me-2">
                                         Danh sách
                                     </router-link>
@@ -62,7 +62,7 @@ export default {
             'Authorization': 'Bearer ' + sessionStorage.getItem("JWT"),
         }
 
-        let apiURL = 'https://localhost:7185/api/Admin/ListUser';
+        let apiURL = 'https://localhost:7185/api/Admin/User';
         axios.get(apiURL, {headers: headers}).then(res => {
             this.Students = res.data
         }).catch(error => {

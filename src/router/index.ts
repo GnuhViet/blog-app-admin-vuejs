@@ -2,6 +2,8 @@ import { createWebHistory, createRouter } from "vue-router";
 import EditComponent from "@/components/EditComponent.vue";
 import ListUserComponent from "@/components/ListUserComponent.vue";
 import UserComponent from "@/components/UserComponent.vue";
+import ListArticle from "@/components/ListArticle.vue";
+import ListCommentComponent from "@/components/ListCommentComponent.vue"
 
 const routes = [
   {
@@ -19,6 +21,17 @@ const routes = [
     name: "edit",
     component: EditComponent,
   },
+  {
+    path: "/ListArticle",
+    name: "ListArticle",
+    component: ListArticle,
+  },
+  {
+    path: "/ListComment",
+    name: "ListComment",
+    component: ListCommentComponent,
+  },
+
 ];
 
 const router = createRouter({
