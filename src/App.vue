@@ -3,7 +3,7 @@
       <!-- Nav bar  -->
       <nav class="navbar navbar-dark bg-primary justify-content-between flex-nowrap flex-row">
         <div class="container">
-          <router-link to="/" class="navbar-brand float-left">MEVN Stack CRUD</router-link>
+          <router-link to="/" class="navbar-brand float-left">Blog - Admin</router-link>
           <ul class="nav navbar-nav flex-row float-right">
             <li class="nav-item" v-if="!auth">
               <router-link to="/" class="nav-link px-3">Login</router-link>
