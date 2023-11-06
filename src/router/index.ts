@@ -1,5 +1,4 @@
 import { createWebHistory, createRouter } from "vue-router";
-import EditComponent from "@/components/EditComponent.vue";
 import ListUserComponent from "@/components/ListUserComponent.vue";
 import UserComponent from "@/components/UserComponent.vue";
 import ListArticle from "@/components/ListArticle.vue";
@@ -16,11 +15,6 @@ const routes = [
     path: "/view",
     name: "view",
     component: ListUserComponent,
-  },
-  {
-    path: "/edit",
-    name: "edit",
-    component: EditComponent,
   },
   {
     path: "/ListArticle",

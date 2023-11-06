@@ -17,26 +17,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="student in Students" :key="student.blogUserId">
-                                <td>{{ student.username }}</td>
-                                <td>{{ student.email }}</td>
-                                <td>{{ student.fullName }}</td>
+                            <tr v-for="u in Users" :key="u.blogUserId">
+                                <td>{{ u.username }}</td>
+                                <td>{{ u.email }}</td>
+                                <td>{{ u.fullName }}</td>
                                 <td>
-                                    <router-link :to="{name: 'ListArticle', params: {id: student.blogUserId }}"
+                                    <router-link :to="{name: 'ListArticle', params: {id: u.blogUserId }}"
                                     class="btn btn-success me-2">
                                         Danh sách
                                     </router-link>
                                 </td>
                                 <td>
-                                    <router-link :to="{name: 'ListComment', params: {id: student.blogUserId}}"
+                                    <router-link :to="{name: 'ListComment', params: {id: u.blogUserId}}"
                                     class="btn btn-success me-2">
                                         Danh sách
                                     </router-link>
                                 </td>
                                 <td>
-                                    <button @click.prevent="deleteStudent(student.blogUserId)"
+                                    <button @click.prevent="setAdmin(u.blogUserId)"
                                     class="btn btn-danger">
-                                        Delete
+                                        Set admin
                                     </button>
                                 </td>
                             </tr>
@@ -54,7 +54,7 @@ import axios from "axios";
 export default {
     data() {
         return {
-            Students: []
+            Users: []
         }
     },
     created() {
@@ -62,21 +62,30 @@ export default {
             'Authorization': 'Bearer ' + sessionStorage.getItem("JWT"),
         }
 
-        let apiURL = 'https://localhost:7185/api/Admin/User';
+        let apiURL = 'http://localhost:5000/api/Admin/User';
         axios.get(apiURL, {headers: headers}).then(res => {
-            this.Students = res.data
+            this.Users = res.data
         }).catch(error => {
             console.log(error)
         })
     },
     methods: {
-        deleteStudent(id) {
-            let apiURL = `http://localhost:4000/api/delete-student/${id}`;
-            let indexOfArrayItem = this.Students.findIndex(i => i._id === id);
+        setAdmin(id) {
+            const authHeaders = {
+                'Authorization': 'Bearer ' + sessionStorage.getItem("JWT"),
+            }
+            let apiURL = `http://localhost:5000/api/Account/SetAdmin/${id}`;
 
-            if (window.confirm("Do you really want to delete?")) {
-                axios.delete(apiURL).then(() => {
-                    this.Students.splice(indexOfArrayItem, 1)
+            console.log(apiURL);
+
+            if (window.confirm("Do you really want to make this person admin?")) {
+                axios({
+                    method: 'put',
+                    url: apiURL,
+                    data: null,
+                    headers:authHeaders
+                }).then(() => {
+                    window.alert("Da set admin!!")
                 }).catch(error => {
                     console.log(error)
                 })

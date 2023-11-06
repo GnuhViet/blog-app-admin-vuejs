@@ -80,7 +80,7 @@
           'Authorization': "Bearer " + token,
         };
        
-        axios.get(`https://localhost:7185/api/Admin/User/${this.Id}/Comments?PageNumber=${this.currentPage}`, { headers: headers })
+        axios.get(`http://localhost:5000/api/Admin/User/${this.Id}/Comments?PageNumber=${this.currentPage}`, { headers: headers })
           .then((res) => {
             console.log(res.data.data);
             let resc = res.data.data;
@@ -122,7 +122,7 @@
           'Authorization': "Bearer " + token,
         };
   
-        axios.get(`https://localhost:7185/api/Admin/User/${this.Id}/Comments?PageNumber=${this.currentPage}`, { headers: headers })
+        axios.get(`http://localhost:5000/api/Admin/User/${this.Id}/Comments?PageNumber=${this.currentPage}`, { headers: headers })
           .then((res) => {
             let resc = res.data.data;
             this.tableData = resc;
@@ -137,7 +137,7 @@
           'Authorization': "Bearer " + token,
         };
          if (window.confirm("Do you really want to delete?")) {
-          axios.delete(`https://localhost:7185/api/Admin/User/${this.Id}/Comments/${idComment}`, { headers: headers })
+          axios.delete(`http://localhost:5000/api/Admin/User/${this.Id}/Comments/${idComment}`, { headers: headers })
           .then((res) => {
             this.Reload();
             console(res);
